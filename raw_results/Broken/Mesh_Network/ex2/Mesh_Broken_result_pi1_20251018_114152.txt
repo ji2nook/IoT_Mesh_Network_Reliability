@@ -1,0 +1,53 @@
+--- [Sat 18 Oct 11:41:52 KST 2025] Pi 1 (메시 네트워크 - 노드 파손) 스크립트 시작 ---
+--- 네트워크 설정 시작 ---
+1번 노드, 네트워크 참여 전 0초 대기...
+[성공] Ad-Hoc 네트워크 참여 완료.
+--- B.A.T.M.A.N. 활성화 ---
+B.A.T.M.A.N. 활성화 완료.
+--- [소프트웨어 차폐] IP 패킷 전달 경로를 iptables로 설정합니다... ---
+--- [소프트웨어 차폐] 설정 완료 ---
+네트워크 안정화를 위해 60초간 대기...
+=== [정상 상태] PI5(10.0.0.5) 경로 및 성능 측정 ===
+traceroute to d8:3a:dd:47:6f:06 (d8:3a:dd:47:6f:06), 50 hops max, 20 byte packets
+ 1: d8:3a:dd:47:6f:06  3.043 ms  3.113 ms  1.005 ms
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=9.59 ms
+64 bytes from 10.0.0.5: icmp_seq=2 ttl=64 time=8.50 ms
+64 bytes from 10.0.0.5: icmp_seq=3 ttl=64 time=7.77 ms
+64 bytes from 10.0.0.5: icmp_seq=4 ttl=64 time=7.93 ms
+64 bytes from 10.0.0.5: icmp_seq=5 ttl=64 time=4.97 ms
+64 bytes from 10.0.0.5: icmp_seq=6 ttl=64 time=8.18 ms
+64 bytes from 10.0.0.5: icmp_seq=7 ttl=64 time=2.32 ms
+64 bytes from 10.0.0.5: icmp_seq=8 ttl=64 time=7.64 ms
+64 bytes from 10.0.0.5: icmp_seq=9 ttl=64 time=8.11 ms
+64 bytes from 10.0.0.5: icmp_seq=10 ttl=64 time=7.76 ms
+
+--- 10.0.0.5 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 4510ms
+rtt min/avg/max/mdev = 2.321/7.276/9.593/1.982 ms
+
+--- [Sat 18 Oct 11:43:11 KST 2025] 브릿지 노드 PI3(10.0.0.3) 파손 감지를 시작합니다... ---
+!!! [Sat 18 Oct 11:44:52 KST 2025] PI3 노드 파손 감지됨 !!!
+대체 경로 탐색을 시작합니다. PI5(10.0.0.5) 연결을 확인합니다...
+### [복구 완료] 우회 경로 활성화 소요 시간: 0.0330초 ###
+
+=== [복구 후] PI5(10.0.0.5) 새로운 경로 및 성능 측정 ===
+traceroute to d8:3a:dd:47:6f:06 (d8:3a:dd:47:6f:06), 50 hops max, 20 byte packets
+ 1: d8:3a:dd:47:6f:06  37.034 ms  41.520 ms  45.546 ms
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=1 ttl=64 time=19.6 ms
+64 bytes from 10.0.0.5: icmp_seq=2 ttl=64 time=7.98 ms
+64 bytes from 10.0.0.5: icmp_seq=3 ttl=64 time=11.2 ms
+64 bytes from 10.0.0.5: icmp_seq=4 ttl=64 time=10.7 ms
+64 bytes from 10.0.0.5: icmp_seq=5 ttl=64 time=3.08 ms
+64 bytes from 10.0.0.5: icmp_seq=6 ttl=64 time=8.91 ms
+64 bytes from 10.0.0.5: icmp_seq=7 ttl=64 time=2.03 ms
+64 bytes from 10.0.0.5: icmp_seq=8 ttl=64 time=7.33 ms
+64 bytes from 10.0.0.5: icmp_seq=9 ttl=64 time=2.14 ms
+64 bytes from 10.0.0.5: icmp_seq=10 ttl=64 time=8.58 ms
+
+--- 10.0.0.5 ping statistics ---
+10 packets transmitted, 10 received, 0% packet loss, time 4509ms
+rtt min/avg/max/mdev = 2.025/8.149/19.614/4.976 ms
+
+--- [Sat 18 Oct 11:44:57 KST 2025] 실험 종료. 10초 후 재부팅합니다. ---

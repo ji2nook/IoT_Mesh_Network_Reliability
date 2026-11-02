@@ -1,0 +1,209 @@
+--- [Sat 18 Oct 15:33:02 KST 2025] Pi 1 (정적 라우팅 - 전파 방해) 스크립트 시작 ---
+--- 네트워크 설정 시작 ---
+1번 노드, 네트워크 참여 전 0초 대기...
+[성공] Ad-Hoc 네트워크 참여 완료.
+IP 주소 할당 완료: 10.0.0.1
+IP 포워딩 활성화 완료.
+ICMP Redirect 수신 기능을 비활성화합니다.
+이웃 노드 탐색을 위해 15초간 대기...
+정적 라우팅 테이블을 설정합니다...
+라우팅 테이블:
+default via 10.0.0.2 dev wlan0 
+10.0.0.2 dev wlan0 scope link 
+네트워크 안정화를 위해 60초간 추가 대기...
+=== [정상 상태] 모든 노드 성능 측정 (각 5회) ===
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=10.9 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=8.11 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=9.33 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=7.39 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=7.55 ms
+
+--- 10.0.0.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 2004ms
+rtt min/avg/max/mdev = 7.387/8.664/10.940/1.325 ms
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=1 ttl=63 time=5.90 ms
+64 bytes from 10.0.0.3: icmp_seq=2 ttl=63 time=11.8 ms
+64 bytes from 10.0.0.3: icmp_seq=3 ttl=63 time=12.0 ms
+64 bytes from 10.0.0.3: icmp_seq=4 ttl=63 time=11.7 ms
+64 bytes from 10.0.0.3: icmp_seq=5 ttl=63 time=12.5 ms
+
+--- 10.0.0.3 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 2005ms
+rtt min/avg/max/mdev = 5.895/10.771/12.484/2.454 ms
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+64 bytes from 10.0.0.4: icmp_seq=1 ttl=62 time=7.85 ms
+64 bytes from 10.0.0.4: icmp_seq=2 ttl=62 time=16.5 ms
+64 bytes from 10.0.0.4: icmp_seq=3 ttl=62 time=16.2 ms
+64 bytes from 10.0.0.4: icmp_seq=4 ttl=62 time=16.9 ms
+64 bytes from 10.0.0.4: icmp_seq=5 ttl=62 time=17.6 ms
+
+--- 10.0.0.4 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 2003ms
+rtt min/avg/max/mdev = 7.847/14.994/17.635/3.607 ms
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=1 ttl=61 time=10.3 ms
+64 bytes from 10.0.0.5: icmp_seq=2 ttl=61 time=22.3 ms
+64 bytes from 10.0.0.5: icmp_seq=3 ttl=61 time=21.5 ms
+64 bytes from 10.0.0.5: icmp_seq=4 ttl=61 time=21.7 ms
+64 bytes from 10.0.0.5: icmp_seq=5 ttl=61 time=23.0 ms
+
+--- 10.0.0.5 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 2005ms
+rtt min/avg/max/mdev = 10.295/19.762/22.957/4.761 ms
+
+--- [Sat 18 Oct 15:34:27 KST 2025] PI3(10.0.0.3)의 전파 방해 상황을 감시합니다... ---
+!!! [Sat 18 Oct 15:35:11 KST 2025] PI3 노드와 통신 두절 감지 (전파 방해로 추정) !!!
+
+=== [PI3 전파 방해 후] 모든 노드 연결성 동시 확인 (총 5회 반복) ===
+--- [측정 1회차] ---
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=7.81 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=11.3 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=9.33 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=8.69 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=7.54 ms
+
+--- 10.0.0.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+rtt min/avg/max/mdev = 7.536/8.931/11.285/1.338 ms
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=2 ttl=63 time=13.0 ms
+64 bytes from 10.0.0.3: icmp_seq=4 ttl=63 time=11.8 ms
+
+--- 10.0.0.3 ping statistics ---
+5 packets transmitted, 2 received, 60% packet loss, time 4034ms
+rtt min/avg/max/mdev = 11.758/12.383/13.008/0.625 ms
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+64 bytes from 10.0.0.4: icmp_seq=2 ttl=62 time=18.8 ms
+64 bytes from 10.0.0.4: icmp_seq=3 ttl=62 time=18.2 ms
+64 bytes from 10.0.0.4: icmp_seq=4 ttl=62 time=18.0 ms
+
+--- 10.0.0.4 ping statistics ---
+5 packets transmitted, 3 received, 40% packet loss, time 4022ms
+rtt min/avg/max/mdev = 17.995/18.303/18.754/0.325 ms
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=1 ttl=61 time=21.2 ms
+64 bytes from 10.0.0.5: icmp_seq=3 ttl=61 time=23.1 ms
+64 bytes from 10.0.0.5: icmp_seq=5 ttl=61 time=26.1 ms
+
+--- 10.0.0.5 ping statistics ---
+5 packets transmitted, 3 received, 40% packet loss, time 4046ms
+rtt min/avg/max/mdev = 21.201/23.498/26.147/2.034 ms
+
+--- [측정 2회차] ---
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=7.85 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=8.07 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=7.57 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=7.60 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=7.75 ms
+
+--- 10.0.0.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4010ms
+rtt min/avg/max/mdev = 7.567/7.767/8.072/0.182 ms
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=2 ttl=63 time=12.2 ms
+64 bytes from 10.0.0.3: icmp_seq=3 ttl=63 time=13.2 ms
+
+--- 10.0.0.3 ping statistics ---
+5 packets transmitted, 2 received, 60% packet loss, time 4018ms
+rtt min/avg/max/mdev = 12.175/12.685/13.195/0.510 ms
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+64 bytes from 10.0.0.4: icmp_seq=3 ttl=62 time=17.4 ms
+
+--- 10.0.0.4 ping statistics ---
+5 packets transmitted, 1 received, 80% packet loss, time 4068ms
+rtt min/avg/max/mdev = 17.407/17.407/17.407/0.000 ms
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+
+--- 10.0.0.5 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4099ms
+
+
+--- [측정 3회차] ---
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=7.85 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=8.03 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=7.85 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=7.05 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=7.72 ms
+
+--- 10.0.0.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 7.053/7.702/8.030/0.339 ms
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=1 ttl=63 time=14.3 ms
+
+--- 10.0.0.3 ping statistics ---
+5 packets transmitted, 1 received, 80% packet loss, time 4076ms
+rtt min/avg/max/mdev = 14.292/14.292/14.292/0.000 ms
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+
+--- 10.0.0.4 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4097ms
+
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=3 ttl=61 time=21.7 ms
+
+--- 10.0.0.5 ping statistics ---
+5 packets transmitted, 1 received, 80% packet loss, time 4068ms
+rtt min/avg/max/mdev = 21.742/21.742/21.742/0.000 ms
+
+--- [측정 4회차] ---
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=7.61 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=7.82 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=7.57 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=7.93 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=7.89 ms
+
+--- 10.0.0.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 7.568/7.763/7.928/0.148 ms
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+
+--- 10.0.0.3 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4091ms
+
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+
+--- 10.0.0.4 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4099ms
+
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+
+--- 10.0.0.5 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4099ms
+
+
+--- [측정 5회차] ---
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=7.65 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=8.10 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=7.84 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=9.97 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=9.43 ms
+
+--- 10.0.0.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4007ms
+rtt min/avg/max/mdev = 7.647/8.598/9.974/0.929 ms
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+
+--- 10.0.0.3 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4074ms
+
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+
+--- 10.0.0.4 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4099ms
+
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+
+--- 10.0.0.5 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4100ms
+
+
+
+--- [Sat 18 Oct 15:36:57 KST 2025] 실험 종료. 10초 후 재부팅합니다. ---

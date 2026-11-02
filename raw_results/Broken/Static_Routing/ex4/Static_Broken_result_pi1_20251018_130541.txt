@@ -1,0 +1,99 @@
+--- [Sat 18 Oct 13:05:41 KST 2025] Pi 1 (정적 라우팅 - 노드 파손) 스크립트 시작 ---
+--- 네트워크 설정 시작 ---
+1번 노드, 네트워크 참여 전 0초 대기...
+[성공] Ad-Hoc 네트워크 참여 완료.
+IP 주소 할당 완료: 10.0.0.1
+IP 포워딩 활성화 완료.
+ICMP Redirect 수신 기능을 비활성화합니다.
+이웃 노드 탐색을 위해 15초간 대기...
+정적 라우팅 테이블을 설정합니다...
+라우팅 테이블:
+default via 10.0.0.2 dev wlan0 
+10.0.0.2 dev wlan0 scope link 
+네트워크 안정화를 위해 60초간 추가 대기...
+=== [정상 상태] 모든 노드 성능 측정 (각 5회) ===
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=9.55 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=9.89 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=7.58 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=7.88 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=10.9 ms
+
+--- 10.0.0.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 7.578/9.166/10.939/1.265 ms
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+64 bytes from 10.0.0.3: icmp_seq=1 ttl=63 time=6.15 ms
+64 bytes from 10.0.0.3: icmp_seq=2 ttl=63 time=14.2 ms
+64 bytes from 10.0.0.3: icmp_seq=3 ttl=63 time=12.3 ms
+64 bytes from 10.0.0.3: icmp_seq=4 ttl=63 time=12.3 ms
+64 bytes from 10.0.0.3: icmp_seq=5 ttl=63 time=13.1 ms
+
+--- 10.0.0.3 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 6.152/11.604/14.196/2.813 ms
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+64 bytes from 10.0.0.4: icmp_seq=1 ttl=62 time=7.99 ms
+64 bytes from 10.0.0.4: icmp_seq=2 ttl=62 time=16.9 ms
+64 bytes from 10.0.0.4: icmp_seq=3 ttl=62 time=17.6 ms
+64 bytes from 10.0.0.4: icmp_seq=4 ttl=62 time=15.8 ms
+64 bytes from 10.0.0.4: icmp_seq=5 ttl=62 time=19.3 ms
+
+--- 10.0.0.4 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 7.994/15.503/19.299/3.924 ms
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+64 bytes from 10.0.0.5: icmp_seq=1 ttl=61 time=10.5 ms
+64 bytes from 10.0.0.5: icmp_seq=2 ttl=61 time=23.6 ms
+64 bytes from 10.0.0.5: icmp_seq=3 ttl=61 time=20.5 ms
+64 bytes from 10.0.0.5: icmp_seq=4 ttl=61 time=27.5 ms
+64 bytes from 10.0.0.5: icmp_seq=5 ttl=61 time=25.7 ms
+
+--- 10.0.0.5 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 10.498/21.577/27.504/6.008 ms
+
+--- [Sat 18 Oct 13:07:14 KST 2025] PI3(10.0.0.3) 노드 파손 감지를 시작합니다... ---
+이제 3번 노드의 전원을 차단해 주십시오.
+!!! [Sat 18 Oct 13:08:37 KST 2025] PI3 노드 파손 감지됨 !!!
+
+=== [PI3 파손 후] 다른 노드 연결성 확인 (각 5회) ===
+PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
+64 bytes from 10.0.0.2: icmp_seq=1 ttl=64 time=10.3 ms
+64 bytes from 10.0.0.2: icmp_seq=2 ttl=64 time=8.09 ms
+64 bytes from 10.0.0.2: icmp_seq=3 ttl=64 time=7.62 ms
+64 bytes from 10.0.0.2: icmp_seq=4 ttl=64 time=7.56 ms
+64 bytes from 10.0.0.2: icmp_seq=5 ttl=64 time=7.58 ms
+
+--- 10.0.0.2 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 4006ms
+rtt min/avg/max/mdev = 7.561/8.220/10.262/1.039 ms
+PING 10.0.0.3 (10.0.0.3) 56(84) bytes of data.
+From 10.0.0.2 icmp_seq=4 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=5 Destination Host Unreachable
+
+--- 10.0.0.3 ping statistics ---
+5 packets transmitted, 0 received, +2 errors, 100% packet loss, time 4080ms
+pipe 2
+PING 10.0.0.4 (10.0.0.4) 56(84) bytes of data.
+From 10.0.0.2 icmp_seq=1 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=2 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=3 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=4 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=5 Destination Host Unreachable
+
+--- 10.0.0.4 ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4050ms
+pipe 4
+PING 10.0.0.5 (10.0.0.5) 56(84) bytes of data.
+From 10.0.0.2 icmp_seq=1 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=2 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=3 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=4 Destination Host Unreachable
+From 10.0.0.2 icmp_seq=5 Destination Host Unreachable
+
+--- 10.0.0.5 ping statistics ---
+5 packets transmitted, 0 received, +5 errors, 100% packet loss, time 4052ms
+pipe 4
+
+--- [Sat 18 Oct 13:09:09 KST 2025] 실험 종료. 10초 후 재부팅합니다. ---
