@@ -55,16 +55,20 @@ def analyze_all_experiments(base_path: str) -> tuple:
         
         # 정보 추출
         for section in normal_section_regex.findall(combined_content):
-            if (match := loss_regex.search(section)):
-                current_exp_data["normal_loss"].append(float(match.group(1)))
-            if (match := rtt_regex.search(section)):
-                current_exp_data["normal_rtt"].append(float(match.group(1)))
+            matches = loss_regex.findall(section)
+            if matches:
+                current_exp_data["normal_loss"].append(float(matches[-1]))
+            matches = rtt_regex.findall(section)
+            if matches:
+                current_exp_data["normal_rtt"].append(float(matches[-1]))
         
         for section in broken_section_regex.findall(combined_content):
-            if (match := loss_regex.search(section)):
-                current_exp_data["broken_loss"].append(float(match.group(1)))
-            if (match := rtt_regex.search(section)):
-                current_exp_data["broken_rtt"].append(float(match.group(1)))
+            matches = loss_regex.findall(section)
+            if matches:
+                current_exp_data["broken_loss"].append(float(matches[-1]))
+            matches = rtt_regex.findall(section)
+            if matches:
+                current_exp_data["broken_rtt"].append(float(matches[-1]))
         
         for time in recovery_regex.findall(combined_content):
             current_exp_data["recovery_time"].append(float(time))
