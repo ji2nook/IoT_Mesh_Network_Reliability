@@ -2,7 +2,7 @@
 
 **Raspberry Pi 기반 BATMAN-adv 메시 네트워크 구축 및 자가 복구 성능 실험**
 
-> 2025년 한국정보기술전략혁신학회(KIITI) 동계 학술대회 수상작
+> 2025년 한국정보기술전략혁신학회(KIITI) 동계 학술대회 우수논문상 수상작
 
 ![Raspberry Pi](https://img.shields.io/badge/Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -128,7 +128,7 @@ Pi3의 bat0 인터페이스에 `tc netem`으로 전파 방해 상황을 점진�
 - **논문집**: [2025년 한국정보기술전략혁신학회 동계 학술대회 논문집](https://www.kiiti.org/index.php?idx=46&mode=view&mdx=141&keyword=%EA%B2%80%EC%83%89%EC%96%B4%EB%A5%BC%20%EC%9E%85%EB%A0%A5%ED%95%98%EC%84%B8%EC%9A%94&cate=&page=1)
 - **논문 제목**: 재난 환경을 가정한 IoT 메시 네트워크 신뢰성 평가
 - **발표 영상**: [YouTube](https://youtu.be/WFyUBYBqq0Y?si=dQ9jHvmNlBpnMp2N)
-- **수상**: 00상_수상명 확인 후 수정 예정 (2025 KIITI 동계 학술대회)
+- **수상**: 우수논문상 (2025 KIITI 동계 학술대회)
 
 ---
 
